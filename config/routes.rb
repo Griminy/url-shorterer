@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   resources :urls, only: %i[create show] do
-    resources :stats, only: %i[index]
+    resources :stats, only: %i[index], module: :urls
   end
-
-  # namespace :urls do
-  # end
 
   resources :requests, only: %i[index]
 end
